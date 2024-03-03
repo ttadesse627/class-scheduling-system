@@ -1,0 +1,500 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 18, 2021, 7:07:24 PM
+    Author     : user
+*/
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body { 
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  background-color:#f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header{
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    overflow: visible;
+    box-sizing: border-box;
+    background-color: #000066;
+}
+
+.body_container{
+    width: 100%;
+    flex-basis: 100%;
+    margin: 0;
+    padding: 10% 0;
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.page-footer{
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #888;
+    text-align: center;
+}
+
+.header a{
+  float: left;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+  color: #9999ff;
+}
+
+.header a:hover {
+    background-color: #ddd;
+    color: #000066;
+}
+
+select{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+select:focus, input[type=checkbox]:focus {
+    background-color: #ddd;
+}
+.input_cont{
+    width: 50%;
+    height: 150px;
+    border: 2px solid grey;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+input[type=checkbox]{
+    padding: 0;
+}
+label{
+    display: block;
+}
+ /*Set a style for all buttons*/ 
+button {
+    background-color: #00c0ef;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+button:hover {
+    background-color: rgba(0,100,250,0.7);
+}
+
+ /*Float cancel and signup buttons and add an equal width*/ 
+.resetbtn, .save {
+  float: left;
+  width: 50%;
+}
+ /*Add padding to container elements*/ 
+.container {
+    padding: 16px;
+}
+ /*The Modal (background)*/ 
+.modal,.modal2 {
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(100,50,50,0.5);
+    padding-top: 50px;
+}
+ /*Modal Content/Box*/ 
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;  /*5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;  /*Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+ 
+ /*The Close Button (x)*/ 
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.clearfix button{
+    margin-left: 10%;
+    width: 25%;
+    display: inline-block;
+    border-radius: 5%;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+    .resetbtn, .save {
+       width: 40%;
+    }
+}
+
+
+/*style for rooms
+ Full-width input fields */
+
+
+ /*Style the horizontal ruler*/ 
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #00c0ef;
+    color: white;
+}
+
+        /* styeling profile image*/
+.chip {
+    margin: 35px 8px 0 auto;
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.chip .picture {
+    float: left;
+    margin: 0 10px 0 -25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+
+/*Styling spinner*/
+
+#loadSpin{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    margin: -75px 0 0 -75px;
+    border: 9px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 9px solid #3498db;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0; } 
+  to{ bottom:0; opacity:1 }
+}
+    .header_links {
+      display: block; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+.bars a{
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+    width: 60px;
+    height: 50px;
+    color: #fff;
+}
+.bars a div{
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px;
+}
+.bars{
+    display: none;
+}
+
+.header_nav .header_nav_content{
+    display: inline-block;
+    padding: 50px 0 5px;
+    text-align: center;
+}
+.close_btn{
+    display: none;
+}
+
+ @media screen and (max-width: 650px) {
+  .header_nav {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  .header_nav .header_nav_content{
+      width: 75%;
+      height: 50%;
+      background: #fff;
+  }
+  .header_nav .header_nav_content a{
+      width: 90%;
+      display: block;
+  }
+
+    /* The Close Button (x) */
+    .close_btn {
+        position: absolute;
+        right: 30%;
+        top: 10%;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close_btn:hover,
+    .close_btn:focus {
+        color: red;
+        cursor: pointer;
+    }
+  .bars{
+      display: flex;
+      align-items: center;
+  }
+  header a:hover{
+      width: 100%;
+  }
+  .page-footer{
+      /*margin-top: 500px;*/
+  }
+}
+
+.modal2{
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+.chip span a:hover{
+    background-color: inherit;
+}
+.chip .logout a:hover{
+    color: #ff0000;
+}
+
+        /*Styling profile*/ 
+
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+.dropdown-content{
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  width: auto;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: auto;
+  z-index: 1;
+  cursor: default;
+}
+
+.dropdown-content span {
+  display: block;
+  cursor: pointer;
+  margin: auto;
+}
+
+
+.show {display: block;}
+        
+        /*Admin Profile Update form*/
+        
+.account{
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll; 
+    background-color: #474e5d;
+    padding-top: 50px;
+}
+
+.form_content{
+    width: 80%;  /*Could be more or less, depending on screen size */
+    height: 700px;
+    box-sizing: border-box;
+    background-color: #fefefe;
+    margin: auto auto 5% auto;  /*5% from the top, 10% from the bottom and centered */
+    padding: 15% 10% 15% 10%;
+    border: 1px solid #888;
+}
+.close_prf{
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+    
+.close_prf:hover,
+.close_prf:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+.form_content{
+    padding-top: 30px;
+}
+.form_content .row{
+    display: block;
+    width: 100%;
+    margin: 1% auto;
+}
+.row input,
+.row label{
+    display: inline;
+}
+h3{
+    margin: auto 5%;
+}
+.row label{
+    width: 25%;
+    margin: auto 5%;
+}
+.row input[type=text],
+.row input[type=password]{
+    width: 50%;
+    height: 40px;
+    background-color: #f0f0f0;
+    border: none;
+}
+.row input{
+    margin-left: 1%;
+}
+.row input:focus{
+    border: 2px solid #000;
+}
+.row input[type=submit],
+.row input[type=reset]{
+    width: 15%;
+    height: 45px;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.row input[type=submit]{
+    background-color: #00ff00;
+    float: right;
+    margin: 2% 15% auto auto;
+}
+.row input[type=reset]{
+    background-color: orange;
+    margin: 2% auto 50px 15%;
+}
+
+

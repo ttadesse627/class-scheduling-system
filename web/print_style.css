@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 24, 2021, 6:58:37 AM
+    Author     : user
+*/
+body{
+    position: static;
+    overflow: initial;
+}
+.modal {
+    display: block;
+    position: relative; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    overflow: visible !important; 
+    background-color: #fff;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 0;
+    border: 1px solid #888;
+    width: 100%;  /*Could be more or less, depending on screen size */
+    height: auto;
+    overflow: visible; 
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #00c0ef;
+    color: white;
+}
+
+.modal .close,
+.tab_header button{
+    display: none;
+}
+h1{
+    width: 100%;
+    text-align: center;
+}

@@ -1,0 +1,142 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 20, 2021, 11:02:28 PM
+    Author     : user
+*/
+.modal {
+    display: block;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: #000;
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto auto 10% auto;  /*5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 95%;  /*Could be more or less, depending on screen size */
+}
+
+.modal .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: 900;
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid black;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #00c0ef;
+    color: white;
+}
+
+
+.tab_header{
+    width: 100%;
+}
+h1{
+    margin-left: 25%;
+}
+.tab_header button{
+    float: right;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+@media screen and(max-width:500px){
+    table{
+        width: 50%;
+    }
+    .table{
+        overflow-x: scroll;
+    }
+}
+
+@media print and(color){
+    *{
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .modal {
+        display: block;
+        position: fixed; 
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; 
+        background-color: #fff;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 0;
+        border: 1px solid #888;
+        width: 100%;  /*Could be more or less, depending on screen size */
+        overflow: auto;
+        page-break-inside: always;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 3px solid black;
+    }
+
+    th, td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        color: black;
+        font-weight: 900;
+    }
+
+    .modal .close,
+    .tab_header button{
+        display: none !important;
+    }
+    h1{
+        width: 100%;
+        text-align: center;
+    }
+    p{
+        font-size: 48px;
+    }
+
+}
